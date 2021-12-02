@@ -1,0 +1,7 @@
+package com.example.mvvm_clean_arquitecture.ui.viewmodel
+
+import androidx.lifecycle.ViewModel
+
+class ListViewModel : ViewModel() {
+    // TODO: Implement the ViewModel
+}
