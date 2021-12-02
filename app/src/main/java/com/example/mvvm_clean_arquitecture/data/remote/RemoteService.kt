@@ -5,6 +5,8 @@ import com.example.mvvm_clean_arquitecture.model.Item
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+/*Here is where RetrofitHelper and ApiClient make their work to realize the network calling*/
+
 class RemoteService {
     private val retrofit = RetrofitHelper.getRetrofit()
 
