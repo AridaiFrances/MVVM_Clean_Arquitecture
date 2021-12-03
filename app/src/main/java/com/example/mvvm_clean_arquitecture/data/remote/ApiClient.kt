@@ -7,6 +7,6 @@ import retrofit2.http.GET
 /*APIClient contains all the endpoints to complement Retrofit urls network calls*/
 
 interface ApiClient {
-    @GET("/example.json")
+    @GET("0A9F")
     suspend fun getAllItems(): Response<List<Item>>
 }
