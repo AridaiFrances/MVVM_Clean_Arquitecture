@@ -9,18 +9,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm_clean_arquitecture.R
 import com.example.mvvm_clean_arquitecture.model.Item
 
-class CustomAdapter : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
-
-    private var transactions: List<Item> = ArrayList()
-    private lateinit var context: Context
-    fun RecyclerAdapter(transactions: List<Item>, context: Context) {
-        this.transactions = transactions
-        this.context = context
-    }
+class CustomAdapter(
+    private val items: List<Item>,
+    private val listener: (Item) -> Unit
+) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = transactions[position]
-        holder.bind(item, context)
+        val item = items[position]
+        holder.bind(item)
+        holder.itemView.setOnClickListener { listener(item)}
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,13 +28,13 @@ class CustomAdapter : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return transactions.size
+        return items.size
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val example = view.findViewById(R.id.rv_textView) as TextView
-        fun bind(item: Item, context: Context) {
+        fun bind(item: Item) {
             example.text = item.example
         }
     }

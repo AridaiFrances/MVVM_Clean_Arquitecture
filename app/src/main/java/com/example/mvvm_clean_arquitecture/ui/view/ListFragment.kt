@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -14,14 +15,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm_clean_arquitecture.R
 import com.example.mvvm_clean_arquitecture.databinding.FragmentListBinding
+import com.example.mvvm_clean_arquitecture.model.Item
 import com.example.mvvm_clean_arquitecture.ui.MainActivity
 import com.example.mvvm_clean_arquitecture.ui.view.adapter.CustomAdapter
 import com.example.mvvm_clean_arquitecture.ui.viewmodel.ListViewModel
 
+
+
 class ListFragment : Fragment() {
     private lateinit var binding: FragmentListBinding
     private val listViewModel: ListViewModel by viewModels()
-    private val adapter: CustomAdapter = CustomAdapter()
+    private lateinit var adapter: CustomAdapter
     private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
@@ -44,7 +48,9 @@ class ListFragment : Fragment() {
         })
 
         listViewModel.items.observe(viewLifecycleOwner, Observer {
-            adapter.RecyclerAdapter(it, requireContext())
+            adapter = CustomAdapter(it) {
+                Toast.makeText(requireContext(), it.example, Toast.LENGTH_SHORT).show()
+            }
             recyclerView = binding.rvOfficesListFragment
             recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayout.VERTICAL, false)
             recyclerView.adapter = adapter
@@ -53,5 +59,9 @@ class ListFragment : Fragment() {
 
     private fun fetchData() {
         listViewModel.fetchItems()
+    }
+
+    private fun onListItemClick(position: Int) {
+        Toast.makeText(requireContext(), "$position", Toast.LENGTH_SHORT).show()
     }
 }
