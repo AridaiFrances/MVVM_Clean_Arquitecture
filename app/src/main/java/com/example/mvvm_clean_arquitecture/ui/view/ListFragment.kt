@@ -19,9 +19,10 @@ import com.example.mvvm_clean_arquitecture.model.Item
 import com.example.mvvm_clean_arquitecture.ui.MainActivity
 import com.example.mvvm_clean_arquitecture.ui.view.adapter.CustomAdapter
 import com.example.mvvm_clean_arquitecture.ui.viewmodel.ListViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
-
+//Dagger annotation to set ready the class
+@AndroidEntryPoint
 class ListFragment : Fragment() {
     private lateinit var binding: FragmentListBinding
     private val listViewModel: ListViewModel by viewModels()

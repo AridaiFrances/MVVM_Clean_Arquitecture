@@ -5,13 +5,18 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mvvm_clean_arquitecture.domain.GetItemsUseCase
 import com.example.mvvm_clean_arquitecture.model.Item
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ListViewModel : ViewModel() {
+//Dagger annotation to set ready the class
+@HiltViewModel
+class ListViewModel @Inject constructor(
+    private val getItemsUseCase: GetItemsUseCase
+) : ViewModel() {
 
     val loading = MutableLiveData<Boolean>()
     val items = MutableLiveData<List<Item>>()
-    var getItemsUseCase = GetItemsUseCase()
 
     fun fetchItems() {
         viewModelScope.launch {

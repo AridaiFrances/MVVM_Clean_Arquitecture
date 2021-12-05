@@ -9,7 +9,10 @@ import androidx.navigation.ui.NavigationUI
 import com.example.mvvm_clean_arquitecture.R
 import com.example.mvvm_clean_arquitecture.R.layout
 import com.example.mvvm_clean_arquitecture.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+//Dagger annotation to set ready the class
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
