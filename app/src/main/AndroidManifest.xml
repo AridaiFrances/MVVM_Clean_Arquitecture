@@ -18,7 +18,7 @@
         android:theme="@style/Theme.MVVM_Clean_Arquitecture"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.itemslist.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

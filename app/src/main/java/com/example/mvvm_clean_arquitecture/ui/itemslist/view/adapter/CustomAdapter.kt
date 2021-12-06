@@ -1,18 +1,19 @@
-package com.example.mvvm_clean_arquitecture.ui.view.adapter
+package com.example.mvvm_clean_arquitecture.ui.itemslist.view.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm_clean_arquitecture.R
+import com.example.mvvm_clean_arquitecture.R.layout
 import com.example.mvvm_clean_arquitecture.model.Item
+import com.example.mvvm_clean_arquitecture.ui.itemslist.view.adapter.CustomAdapter.ViewHolder
 
 class CustomAdapter(
     private val items: List<Item>,
     private val listener: (Item) -> Unit
-) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
@@ -24,7 +25,7 @@ class CustomAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return ViewHolder(layoutInflater.inflate(R.layout.row_item, parent, false))
+        return ViewHolder(layoutInflater.inflate(layout.row_item, parent, false))
     }
 
     override fun getItemCount(): Int {

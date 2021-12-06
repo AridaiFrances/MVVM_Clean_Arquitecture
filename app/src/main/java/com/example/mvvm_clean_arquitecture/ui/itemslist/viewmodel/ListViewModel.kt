@@ -1,4 +1,4 @@
-package com.example.mvvm_clean_arquitecture.ui.viewmodel
+package com.example.mvvm_clean_arquitecture.ui.itemslist.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

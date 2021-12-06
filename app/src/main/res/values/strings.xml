@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MVVM_Clean_Arquitecture</string>
     <string name="list_fragment_title">List Fragment</string>
+    <string name="dialog_fragment_remove">Do you really want to remove the selected item?</string>
+    <string name="dialog_fragment_cancel">Cancel</string>
+    <string name="dialog_fragment_agree">Agree</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.ListFragment">
+    tools:context=".ui.itemslist.view.ListFragment">
 
     <ProgressBar
         android:id="@+id/loading"
@@ -15,7 +15,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/pink_500">
 
 
         <androidx.cardview.widget.CardView

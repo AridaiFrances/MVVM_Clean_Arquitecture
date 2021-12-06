@@ -1,5 +1,7 @@
-package com.example.mvvm_clean_arquitecture.ui
+package com.example.mvvm_clean_arquitecture.ui.itemslist
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.Navigation
@@ -14,6 +16,13 @@ import dagger.hilt.android.AndroidEntryPoint
 //Dagger annotation to set ready the class
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+
+        fun getCallingIntent(context: Context): Intent {
+            return Intent(context, MainActivity::class.java)
+        }
+    }
 
     private lateinit var binding: ActivityMainBinding
 
