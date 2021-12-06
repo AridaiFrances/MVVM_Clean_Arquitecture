@@ -16,14 +16,14 @@ class ListViewModel @Inject constructor(
 ) : ViewModel() {
 
     val loading = MutableLiveData<Boolean>()
-    val items = MutableLiveData<List<Item>>()
+    val items = MutableLiveData<MutableList<Item>>()
 
     fun fetchItems() {
         viewModelScope.launch {
             loading.postValue(true)
             val resultResponse = getItemsUseCase()
             if (!resultResponse.isNullOrEmpty()) {
-                items.postValue(resultResponse)
+                items.postValue(resultResponse.toMutableList())
                 loading.postValue(false)
             }
         }

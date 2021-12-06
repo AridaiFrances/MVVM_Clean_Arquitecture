@@ -44,11 +44,12 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as MainActivity).supportActionBar?.title = getString(R.string.list_fragment_title)
-
+        setUpListeners()
         fetchData()
 
         listViewModel.loading.observe(viewLifecycleOwner, Observer {
             binding.loading.isVisible = it
+            binding.splListFragment.isRefreshing = it
         })
 
         listViewModel.items.observe(viewLifecycleOwner, Observer {
@@ -67,7 +68,13 @@ class ListFragment : Fragment() {
 
     private fun onListItemClick(item: Item) {
 //        followNavigationGraph()
-        openFragmentDialog()
+        openFragmentDialog(item)
+    }
+
+    private fun setUpListeners() {
+        binding.splListFragment.setOnRefreshListener {
+            fetchData()
+        }
     }
 
     /**
@@ -77,18 +84,24 @@ class ListFragment : Fragment() {
         findNavController().navigate(R.id.action_listFragment_to_detailsFragment)
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    private fun updateItemList() {
+        adapter.notifyDataSetChanged()
+    }
+
     /**
      * Used to open a custom fragment dialog
      **/
-    private fun openFragmentDialog() {
+    private fun openFragmentDialog(item: Item) {
         val exampleDialogFragment = ExampleDialogFragment.newInstance()
         exampleDialogFragment.show(parentFragmentManager, object : ExampleDialogFragment.DialogFragmentListener {
             override fun onAgree() {
-                Toast.makeText(requireContext(), "agree", Toast.LENGTH_SHORT).show()
+                listViewModel.items.value?.remove(item)
+                updateItemList()
             }
 
             override fun onCancel() {
-                Toast.makeText(requireContext(), "cancel", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Action cancelled", Toast.LENGTH_SHORT).show()
             }
         })
     }

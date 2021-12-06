@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.example.mvvm_clean_arquitecture.Common.Navigator
 import com.example.mvvm_clean_arquitecture.R
 import com.example.mvvm_clean_arquitecture.R.layout
 import com.example.mvvm_clean_arquitecture.databinding.ActivityMainBinding
@@ -35,6 +36,15 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
         NavigationUI.setupActionBarWithNavController(this, navController)
+
+        setUpListeners()
+    }
+
+    private fun setUpListeners() {
+        binding.fbActivityMain.setOnClickListener {
+            Navigator.navigateToRuntimePermissionsActivity(this)
+        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

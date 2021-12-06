@@ -15,4 +15,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="Theme.MVVM_Clean_Arquitecture.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.MVVM_Clean_Arquitecture.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.MVVM_Clean_Arquitecture.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
