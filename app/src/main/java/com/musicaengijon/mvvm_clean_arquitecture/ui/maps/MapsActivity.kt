@@ -12,7 +12,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MapsActivity : AppCompatActivity() {
 
-
     companion object {
 
         fun getCallingIntent(context: Context): Intent {
@@ -26,5 +25,11 @@ class MapsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        fetchData()
+    }
+
+    private fun fetchData() {
+        mapsViewModel.fetchData()
     }
 }
