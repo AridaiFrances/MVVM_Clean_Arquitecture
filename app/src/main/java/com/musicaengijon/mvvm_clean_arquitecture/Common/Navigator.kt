@@ -3,7 +3,7 @@ package com.musicaengijon.mvvm_clean_arquitecture.Common
 import android.app.Activity
 import androidx.annotation.NonNull
 import com.musicaengijon.mvvm_clean_arquitecture.ui.itemslist.MainActivity
-import com.musicaengijon.mvvm_clean_arquitecture.ui.maps.view.MapsActivity
+import com.musicaengijon.mvvm_clean_arquitecture.ui.maps.MapsActivity
 
 object Navigator {
 

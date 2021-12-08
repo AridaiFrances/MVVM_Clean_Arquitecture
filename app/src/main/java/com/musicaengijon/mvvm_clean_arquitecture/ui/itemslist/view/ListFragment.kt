@@ -10,7 +10,6 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -47,12 +46,12 @@ class ListFragment : Fragment() {
         setUpListeners()
         fetchData()
 
-        listViewModel.loading.observe(viewLifecycleOwner, Observer {
+        listViewModel.loading.observe(viewLifecycleOwner, {
             binding.loading.isVisible = it
             binding.splListFragment.isRefreshing = it
         })
 
-        listViewModel.items.observe(viewLifecycleOwner, Observer {
+        listViewModel.items.observe(viewLifecycleOwner, {
             adapter = CustomAdapter(it) { item ->
                 onListItemClick(item)
             }

@@ -9,6 +9,7 @@
          location permissions for the "MyLocation" functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <!-- Install time application permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -36,7 +37,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="com.musicaengijon.mvvm_clean_arquitecture.ui.maps.view.MapsActivity"
+            android:name="com.musicaengijon.mvvm_clean_arquitecture.ui.maps.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_runtime_permissions"
             android:theme="@style/Theme.MVVM_Clean_Arquitecture.NoActionBar" />
