@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.mvvm_clean_arquitecture.ui.itemslist.view.ListFragment"
+        android:name="com.musicaengijon.mvvm_clean_arquitecture.ui.itemslist.view.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.example.mvvm_clean_arquitecture.ui.itemslist.view.DetailsFragment"
+        android:name="com.musicaengijon.mvvm_clean_arquitecture.ui.itemslist.view.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" />
 </navigation>

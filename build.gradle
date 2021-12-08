@@ -13,7 +13,15 @@ buildscript {
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
         //Dagger Hilt dependencies
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        //Firebase
+        classpath 'com.google.gms:google-services:4.3.10'
 
+    }
+}
+
+allprojects {
+    repositories {
+        google()
     }
 }
 
