@@ -2,6 +2,7 @@ package com.musicaengijon.mvvm_clean_arquitecture.ui.itemslist
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
@@ -11,6 +12,7 @@ import com.musicaengijon.mvvm_clean_arquitecture.Common.Navigator
 import com.musicaengijon.mvvm_clean_arquitecture.R
 import com.musicaengijon.mvvm_clean_arquitecture.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 //Dagger annotation to set ready the class
 @AndroidEntryPoint
@@ -29,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        Timber.i(getString(R.string.test_string))
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
