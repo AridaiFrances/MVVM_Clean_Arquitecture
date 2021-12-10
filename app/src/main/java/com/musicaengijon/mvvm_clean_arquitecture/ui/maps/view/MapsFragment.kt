@@ -4,13 +4,18 @@ import androidx.fragment.app.Fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.navGraphViewModels
+import androidx.navigation.ui.NavigationUI
 import com.musicaengijon.mvvm_clean_arquitecture.R
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -49,7 +54,19 @@ class MapsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentMapsBinding.inflate(layoutInflater, container, false)
+
+        setHasOptionsMenu(true)
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.simple_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item,
+        view!!.findNavController()) || super.onOptionsItemSelected(item)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -78,7 +95,7 @@ class MapsFragment : Fragment() {
 
     private fun setInfoWindowClickListener(googleMap: GoogleMap) {
         googleMap.setOnInfoWindowClickListener { marker ->
-            Toast.makeText(requireContext(), "${marker.title } tapped!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "${marker.title} tapped!", Toast.LENGTH_SHORT).show()
         }
     }
 

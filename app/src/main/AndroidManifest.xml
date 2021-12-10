@@ -39,8 +39,7 @@
         <activity
             android:name="com.musicaengijon.mvvm_clean_arquitecture.ui.maps.MapsActivity"
             android:exported="false"
-            android:label="@string/title_activity_runtime_permissions"
-            android:theme="@style/Theme.MVVM_Clean_Arquitecture.NoActionBar" />
+            android:label="@string/title_activity_runtime_permissions" />
         <activity
             android:name="com.musicaengijon.mvvm_clean_arquitecture.ui.itemslist.MainActivity"
             android:exported="true" >
