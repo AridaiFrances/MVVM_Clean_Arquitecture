@@ -13,14 +13,18 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.musicaengijon.mvvm_clean_arquitecture.DaggerApplicationGraph
+import com.musicaengijon.mvvm_clean_arquitecture.log.LogConsole
 import com.musicaengijon.mvvm_clean_arquitecture.R
 import com.musicaengijon.mvvm_clean_arquitecture.databinding.FragmentListBinding
+import com.musicaengijon.mvvm_clean_arquitecture.log.Log
 import com.musicaengijon.mvvm_clean_arquitecture.model.Item
 import com.musicaengijon.mvvm_clean_arquitecture.ui.dialog.view.ExampleDialogFragment
 import com.musicaengijon.mvvm_clean_arquitecture.ui.itemslist.MainActivity
 import com.musicaengijon.mvvm_clean_arquitecture.ui.itemslist.view.adapter.CustomAdapter
 import com.musicaengijon.mvvm_clean_arquitecture.ui.itemslist.viewmodel.ListViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 //Dagger annotation to set ready the class
 @AndroidEntryPoint
@@ -31,12 +35,23 @@ class ListFragment : Fragment() {
     private lateinit var adapter: CustomAdapter
     private lateinit var recyclerView: RecyclerView
 
+    @Inject lateinit var logger : Log
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentListBinding.inflate(layoutInflater)
+
+        DaggerApplicationGraph.create().inject(this)
+
+
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        logger.log(getString(R.string.test_string))
     }
 
     @SuppressLint("WrongConstant")

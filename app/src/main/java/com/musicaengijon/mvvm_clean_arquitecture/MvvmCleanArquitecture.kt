@@ -19,7 +19,7 @@ class MvvmCleanArquitecture: Application() {
         super.onCreate()
         Timber.plant(Timber.DebugTree())
 
-        MvvmCleanArquitecture.database =  Room.databaseBuilder(this, TasksDatabase::class.java, "tasks-db").build()
+        database =  Room.databaseBuilder(this, TasksDatabase::class.java, "tasks-db").build()
     }
 }
 
