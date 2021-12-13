@@ -1,4 +1,4 @@
-package com.musicaengijon.mvvm_clean_arquitecture.ui.maps.viewmodel
+package com.musicaengijon.mvvm_clean_arquitecture.ui.room
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,16 +11,6 @@ import javax.inject.Inject
 
 //Dagger annotation to set ready the class
 @HiltViewModel
-class MapsViewModel @Inject constructor(
-    private val getCitiesUseCase: GetCitiesUseCase
-) : ViewModel() {
+class RoomViewModel @Inject constructor() : ViewModel() {
 
-    val cities: MutableLiveData<List<City>> = MutableLiveData<List<City>>()
-
-    fun fetchData() {
-        viewModelScope.launch {
-            cities.postValue(getCitiesUseCase() ?: emptyList())
-
-        }
-    }
 }

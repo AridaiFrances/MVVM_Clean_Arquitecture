@@ -5,6 +5,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'com.google.gms.google-services'
     id 'androidx.navigation.safeargs'
+    id 'kotlin-android-extensions'
 
 }
 
@@ -83,6 +84,16 @@ dependencies {
 
     //Timber
     implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    // Room dependencies
+    implementation "androidx.room:room-runtime:$version_room"
+    kapt "androidx.room:room-compiler:$version_room"
+
+    // Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$version_room"
+
+    //Multithread library
+    implementation 'org.jetbrains.anko:anko-common:0.9'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

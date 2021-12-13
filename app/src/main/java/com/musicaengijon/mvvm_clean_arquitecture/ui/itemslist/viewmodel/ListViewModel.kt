@@ -15,8 +15,8 @@ class ListViewModel @Inject constructor(
     private val getItemsUseCase: GetItemsUseCase
 ) : ViewModel() {
 
-    val loading = MutableLiveData<Boolean>()
-    val items = MutableLiveData<MutableList<Item>>()
+    val loading: MutableLiveData<Boolean> = MutableLiveData<Boolean>()
+    val items: MutableLiveData<MutableList<Item>> = MutableLiveData<MutableList<Item>>()
 
     fun fetchItems() {
         viewModelScope.launch {

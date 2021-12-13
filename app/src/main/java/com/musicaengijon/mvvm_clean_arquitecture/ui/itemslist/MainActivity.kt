@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpListeners() {
         binding.fbActivityMain.setOnClickListener {
-            Navigator.navigateToRuntimePermissionsActivity(this)
+            Navigator.navigateToRoomActivity(this)
         }
 
     }

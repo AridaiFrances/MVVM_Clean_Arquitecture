@@ -32,15 +32,13 @@ class MapsActivity : AppCompatActivity() {
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostMapsFragment) as NavHostFragment
         val navController = navHostFragment.navController
         NavigationUI.setupActionBarWithNavController(this, navController)
         fetchData()
-
-
     }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.navHostMapsFragment)
         return navController.navigateUp()
