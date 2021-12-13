@@ -2,11 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.musicaengijon.mvvm_clean_arquitecture">
-    <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the "MyLocation" functionality.
-    -->
+
     <application
         android:name=".MvvmCleanArquitecture"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +12,18 @@
         android:theme="@style/Theme.MVVM_Clean_Arquitecture"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
+        <activity
+            android:name=".patterns.singleton.SingletonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".patterns.abstractmethod.AbstractActivity"
+            android:exported="false" />
+        <activity
+            android:name=".patterns.factorymethod.FactoryMethodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".patterns.builder.BuilderActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.room.RoomActivity"
             android:exported="false" />
@@ -31,7 +39,6 @@
             android:name=".ui.maps.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_runtime_permissions" />
-
         <activity
             android:name=".ui.itemslist.MainActivity"
             android:exported="true">
@@ -41,11 +48,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Install time application permissions -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />

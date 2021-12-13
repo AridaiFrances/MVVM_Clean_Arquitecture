@@ -1,6 +1,5 @@
 package com.musicaengijon.mvvm_clean_arquitecture.log
 
-import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -9,7 +8,7 @@ import javax.inject.Singleton
 class LogConsole @Inject constructor(): Log {
 
     override fun log(message: String) {
-       Timber.i(message)
+       println(message)
     }
 
     init {

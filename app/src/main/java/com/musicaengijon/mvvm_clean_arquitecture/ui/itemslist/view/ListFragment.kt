@@ -14,7 +14,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.musicaengijon.mvvm_clean_arquitecture.DaggerApplicationGraph
-import com.musicaengijon.mvvm_clean_arquitecture.log.LogConsole
 import com.musicaengijon.mvvm_clean_arquitecture.R
 import com.musicaengijon.mvvm_clean_arquitecture.databinding.FragmentListBinding
 import com.musicaengijon.mvvm_clean_arquitecture.log.Log

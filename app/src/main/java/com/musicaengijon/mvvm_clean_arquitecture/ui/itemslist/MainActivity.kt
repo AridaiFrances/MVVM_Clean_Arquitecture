@@ -11,6 +11,7 @@ import androidx.navigation.ui.NavigationUI
 import com.musicaengijon.mvvm_clean_arquitecture.Common.Navigator
 import com.musicaengijon.mvvm_clean_arquitecture.R
 import com.musicaengijon.mvvm_clean_arquitecture.databinding.ActivityMainBinding
+import com.musicaengijon.mvvm_clean_arquitecture.patterns.abstractmethod.AbstractActivity
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -40,8 +41,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpListeners() {
-        binding.fbActivityMain.setOnClickListener {
+        binding.fbActivityMainToActivityMaps.setOnClickListener {
             Navigator.navigateToRoomActivity(this)
+        }
+        binding.fbActivityMainToActivityBuilder.setOnClickListener {
+            Navigator.navigateToBuilderActivity(this)
         }
 
     }

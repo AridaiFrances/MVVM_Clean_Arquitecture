@@ -9,4 +9,8 @@ class LogFile @Inject constructor(): Log {
     override fun log(message: String) {
         println("Writing log in file")
     }
+
+    init {
+        println("A new instance of LogFile was created")
+    }
 }
