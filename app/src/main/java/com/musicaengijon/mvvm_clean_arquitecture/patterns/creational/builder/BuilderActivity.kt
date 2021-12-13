@@ -1,4 +1,4 @@
-package com.musicaengijon.mvvm_clean_arquitecture.patterns.builder
+package com.musicaengijon.mvvm_clean_arquitecture.patterns.creational.builder
 
 import android.content.Context
 import android.content.Intent
@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import com.musicaengijon.mvvm_clean_arquitecture.R
-import com.musicaengijon.mvvm_clean_arquitecture.patterns.builder.UserType.COPPER
-import com.musicaengijon.mvvm_clean_arquitecture.patterns.builder.UserType.GOLD
+import com.musicaengijon.mvvm_clean_arquitecture.patterns.creational.builder.UserType.COPPER
+import com.musicaengijon.mvvm_clean_arquitecture.patterns.creational.builder.UserType.GOLD
 
 /**
  * This is an example of creating the Builder pattern.

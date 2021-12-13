@@ -1,4 +1,4 @@
-package com.musicaengijon.mvvm_clean_arquitecture.patterns.factorymethod
+package com.musicaengijon.mvvm_clean_arquitecture.patterns.creational.factorymethod
 
 interface GenericCamera {
     fun open()

@@ -1,9 +1,9 @@
-package com.musicaengijon.mvvm_clean_arquitecture.patterns.factorymethod
+package com.musicaengijon.mvvm_clean_arquitecture.patterns.creational.factorymethod
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.musicaengijon.mvvm_clean_arquitecture.R
-import com.musicaengijon.mvvm_clean_arquitecture.patterns.factorymethod.CameraType.FIRSTCAMERA
+import com.musicaengijon.mvvm_clean_arquitecture.patterns.creational.factorymethod.CameraType.FIRSTCAMERA
 
 /**
  * The FactoryMethod pattern will be useful when we want to have a common way of instantiating objects that are related to each other

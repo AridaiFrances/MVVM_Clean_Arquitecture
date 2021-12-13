@@ -1,6 +1,6 @@
-package com.musicaengijon.mvvm_clean_arquitecture.patterns.builder
+package com.musicaengijon.mvvm_clean_arquitecture.patterns.creational.builder
 
-import com.musicaengijon.mvvm_clean_arquitecture.patterns.builder.UserType.COPPER
+import com.musicaengijon.mvvm_clean_arquitecture.patterns.creational.builder.UserType.COPPER
 
 class User(
     val id: Int,

@@ -1,4 +1,4 @@
-package com.musicaengijon.mvvm_clean_arquitecture.patterns.singleton
+package com.musicaengijon.mvvm_clean_arquitecture.patterns.creational.singleton
 
 import android.annotation.SuppressLint
 import android.content.Context

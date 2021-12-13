@@ -2,7 +2,7 @@ package com.musicaengijon.mvvm_clean_arquitecture.Common
 
 import android.app.Activity
 import androidx.annotation.NonNull
-import com.musicaengijon.mvvm_clean_arquitecture.patterns.builder.BuilderActivity
+import com.musicaengijon.mvvm_clean_arquitecture.patterns.creational.builder.BuilderActivity
 import com.musicaengijon.mvvm_clean_arquitecture.ui.itemslist.MainActivity
 import com.musicaengijon.mvvm_clean_arquitecture.ui.maps.MapsActivity
 import com.musicaengijon.mvvm_clean_arquitecture.ui.room.RoomActivity

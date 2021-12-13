@@ -1,4 +1,4 @@
-package com.musicaengijon.mvvm_clean_arquitecture.patterns.abstractmethod
+package com.musicaengijon.mvvm_clean_arquitecture.patterns.creational.abstractmethod
 
 import android.content.Context
 import android.content.Intent

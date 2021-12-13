@@ -13,16 +13,22 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".patterns.singleton.SingletonActivity"
+            android:name=".patterns.structural.facade.FacadeActivity"
             android:exported="false" />
         <activity
-            android:name=".patterns.abstractmethod.AbstractActivity"
+            android:name=".patterns.structural.adapter.AdapterActivity"
             android:exported="false" />
         <activity
-            android:name=".patterns.factorymethod.FactoryMethodActivity"
+            android:name=".patterns.creational.singleton.SingletonActivity"
             android:exported="false" />
         <activity
-            android:name=".patterns.builder.BuilderActivity"
+            android:name=".patterns.creational.abstractmethod.AbstractActivity"
+            android:exported="false" />
+        <activity
+            android:name=".patterns.creational.factorymethod.FactoryMethodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".patterns.creational.builder.BuilderActivity"
             android:exported="false" />
         <activity
             android:name=".ui.room.RoomActivity"
@@ -53,9 +59,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>
