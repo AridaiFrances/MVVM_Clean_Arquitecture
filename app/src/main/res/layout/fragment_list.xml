@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.ListFragment">
+    tools:context=".ui.itemslist.view.ListFragment">
 
     <ProgressBar
         android:id="@+id/loading"
@@ -15,7 +15,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/pink_500">
 
 
         <androidx.cardview.widget.CardView
@@ -28,16 +29,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_offices_list_fragment"
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/spl_list_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_margin="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_offices_list_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
 
         </androidx.cardview.widget.CardView>
 

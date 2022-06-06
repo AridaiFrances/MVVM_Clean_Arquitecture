@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    android:id="@+id/root_view"
+    tools:context=".ui.itemslist.MainActivity">
 
 
     <LinearLayout
@@ -25,6 +26,29 @@
             app:navGraph="@navigation/main_navigation"/>
 
         </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fb_activity_main_to_activity_maps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="30dp"
+        android:contentDescription="@string/test_string">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fb_activity_main_to_activity_builder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/fb_activity_main_to_activity_maps"
+        app:layout_constraintEnd_toStartOf="@id/fb_activity_main_to_activity_maps"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/pink_500"
+        android:contentDescription="@string/test_string">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
